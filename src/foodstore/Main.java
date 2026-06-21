@@ -1,5 +1,6 @@
 package foodstore;
 
+import foodstore.entities.Categoria;
 import foodstore.service.CategoriaService;
 import foodstore.service.PedidoService;
 import foodstore.service.ProductoService;
@@ -15,7 +16,12 @@ public class Main {
         UsuarioService usuarioService = new UsuarioService();
         PedidoService pedidoService = new PedidoService(usuarioService);
 
-    
+        boolean cargaCorrecta = DatosIniciales.cargar(
+                categoriaService, productoService, usuarioService, pedidoService);
+        if (!cargaCorrecta) {
+            return;
+        }
+
         try (Scanner scanner = new Scanner(System.in)) {
             AppMenu menu = new AppMenu(
                     scanner, categoriaService, productoService,
