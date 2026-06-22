@@ -20,6 +20,7 @@ public abstract class Base implements Identificable<Long> {
         this.createdAt = LocalDateTime.now();
     }
 
+    @Override
     public Long getId() {
         return id;
     }
