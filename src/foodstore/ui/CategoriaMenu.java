@@ -77,9 +77,7 @@ public final class CategoriaMenu {
             }
             service.actualizar(id, nombre, descripcion);
             System.out.println("La categoria se actualizo correctamente.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -98,9 +96,7 @@ public final class CategoriaMenu {
             }
             service.eliminar(id);
             System.out.println("La categoria se elimino correctamente.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }

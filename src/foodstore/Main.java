@@ -1,6 +1,5 @@
 package foodstore;
 
-import foodstore.entities.Categoria;
 import foodstore.service.CategoriaService;
 import foodstore.service.PedidoService;
 import foodstore.service.ProductoService;

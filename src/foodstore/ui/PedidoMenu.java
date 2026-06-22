@@ -85,9 +85,7 @@ public final class PedidoMenu {
                             + dinero(detalle.getSubtotal()));
                 }
             }
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -113,13 +111,7 @@ public final class PedidoMenu {
             service.guardar(pedido);
             System.out.println("El pedido se creo con el id " + pedido.getId()
                     + " y un total de $" + dinero(pedido.getTotal()) + ".");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-            System.out.println("No se guardo el pedido.");
-        } catch (StockInvalidoException e) {
-            System.out.println(e.getMessage());
-            System.out.println("No se guardo el pedido.");
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | StockInvalidoException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
             System.out.println("No se guardo el pedido.");
         }
@@ -138,10 +130,7 @@ public final class PedidoMenu {
             try {
                 producto = productoService.buscarPorId(
                         input.leerIdPositivo("Ingrese el id del producto: "));
-            } catch (EntidadNoEncontradaException e) {
-                System.out.println(e.getMessage());
-                continue;
-            } catch (IllegalArgumentException e) {
+            } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue;
             }
@@ -162,10 +151,7 @@ public final class PedidoMenu {
             }
             try {
                 pedido.addDetallePedido(cantidad, producto.getPrecio(), producto);
-            } catch (StockInvalidoException e) {
-                System.out.println(e.getMessage());
-                continue;
-            } catch (IllegalArgumentException e) {
+            } catch (StockInvalidoException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue;
             }
@@ -212,9 +198,7 @@ public final class PedidoMenu {
             }
             service.actualizar(id, estado, formaPago);
             System.out.println("El pedido se actualizo correctamente.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -236,9 +220,7 @@ public final class PedidoMenu {
             }
             service.eliminar(id);
             System.out.println("El pedido se elimino correctamente.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }

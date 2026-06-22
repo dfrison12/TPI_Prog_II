@@ -97,9 +97,7 @@ public final class UsuarioMenu {
                 service.actualizar(id, nombre, apellido, mail, celular, rol);
             }
             System.out.println("El usuario se actualizo correctamente.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -121,9 +119,7 @@ public final class UsuarioMenu {
             }
             service.eliminar(id);
             System.out.println("El usuario se elimino correctamente.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }

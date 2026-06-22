@@ -92,15 +92,7 @@ public final class DatosIniciales {
             segundoPedido.addDetallePedido(2, agua.getPrecio(), agua);
             pedidoService.guardar(segundoPedido);
             return true;
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println("No se pudieron cargar los datos iniciales.");
-            System.out.println(e.getMessage());
-            return false;
-        } catch (StockInvalidoException e) {
-            System.out.println("No se pudieron cargar los datos iniciales.");
-            System.out.println(e.getMessage());
-            return false;
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | StockInvalidoException | IllegalArgumentException e) {
             System.out.println("No se pudieron cargar los datos iniciales.");
             System.out.println(e.getMessage());
             return false;

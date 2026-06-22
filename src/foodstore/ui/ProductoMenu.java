@@ -53,9 +53,7 @@ public final class ProductoMenu {
             Long id = input.leerIdPositivo("Ingrese el id de la categoria: ");
             mostrar(service.listarPorCategoria(id),
                     "No hay productos cargados para esa categoria.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -80,9 +78,7 @@ public final class ProductoMenu {
                     imagen, disponible, categoria);
             service.guardar(producto);
             System.out.println("El producto se creo con el id " + producto.getId() + ".");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -134,9 +130,7 @@ public final class ProductoMenu {
             service.actualizar(id, nombre, precio, descripcion, stock, imagen,
                     disponible, categoriaId);
             System.out.println("El producto se actualizo correctamente.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -168,9 +162,7 @@ public final class ProductoMenu {
             }
             service.eliminar(id);
             System.out.println("El producto se elimino correctamente.");
-        } catch (EntidadNoEncontradaException e) {
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (EntidadNoEncontradaException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
