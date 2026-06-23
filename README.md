@@ -57,6 +57,4 @@ resultado. Las entidades heredan de `Base`, y `Pedido` implementa `Calculable`.
 Cada ejecución comienza con datos demostrativos. Los cambios viven únicamente
 en memoria y se reinician al cerrar la aplicación.
 
-## Documentacion y video
-
-- Repositorio público: https://github.com/dfrison12/TPI_Prog_II
+## Link Video demo: https://www.youtube.com/watch?v=1HPOnDzVsns
